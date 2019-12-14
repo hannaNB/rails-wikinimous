@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300|Roboto+Slab">
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Wikinimous</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to "New article", new_article_path %>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+        
+        <h1>Edit article</h1>
+
+        <%= form_for @article do |f| %>
+          <div class="form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_area :content, :id => "message_area" %>
+            <%#= f.text_field :content %>
+          </div>
+
+          <%= f.submit %>
+        <% end %>
+
+        <p><%= link_to "Get Back", articles_path %></p>
+
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300|Roboto+Slab">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300|Roboto+Slab">
 
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
@@ -24,6 +24,8 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<%= link_to "New article", new_article_path %>
 
 <% @articles.each do |article| %>
     <h2><%= article.title %></h2>

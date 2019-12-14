@@ -1,0 +1,19 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+        
+        <h1>New article</h1>
+
+        <form class="new_article" id="new_article" role="form" action="/articles" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+        <div class="form-group"><label class="control-label required" for="article_title">Title</label><input class="form-control" type="text" name="article[title]" id="article_title" /></div>
+        <div class="form-group"><label class="control-label required" for="article_content">Content</label><textarea data-editor="markdown" rows="10" class="form-control" name="article[content]" id="article_content">
+        </textarea></div>
+        <input type="submit" name="commit" value="Create Article" class="btn btn-default" data-disable-with="Create Article" />
+        </form>
+
+        <%= link_to "Back", articles_path %>
+
+        </div>
+    </div>
+</div>

@@ -1,11 +1,9 @@
 class ArticlesController < ApplicationController
-    before_action :set_article, only: [:show, :edit, :update, :delete]
-
+    skip_forgery_protection
+    before_action :set_article, only: [:show, :edit, :update, :destroy]
+    # before_action :authorize, only: [:edit, :new, :update, :create, :destroy]
     def index
         @articles = Article.all
-    end
-    def show
-        # @article = Article.find(params[:id])
     end
     def new
         @article = Article.new
@@ -14,12 +12,16 @@ class ArticlesController < ApplicationController
         @article = Article.create(article_params)
         redirect_to articles_path
     end
+    def show
+        # @article = Article.find(params[:id])
+    end
     def edit
         # @article = Article.find(params[:id])
     end
     def update
         # @article = Article.find(params[:id])
         @article.update(article_params)
+        @article.save
         redirect_to articles_path
     end
     def destroy
